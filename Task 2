@@ -1,0 +1,53 @@
+pragma solidity ^0.5.0;
+
+/*
+------------------------------------------------------------
+ GDG AASTU – Week 2 Solidity Practice Task (Modified Version)
+------------------------------------------------------------
+*/
+
+contract Task2 {
+
+    // --------------------------------------------------------
+    // VARIABLES
+    // --------------------------------------------------------
+
+    uint public number;                     // Public number variable  
+    string private message = "Hello GDG AASTU!"; // Private stored message
+    bool public isActive = true;            // Contract activity status
+
+
+    // --------------------------------------------------------
+    // FUNCTIONS
+    // --------------------------------------------------------
+
+    // Sets the public variable "number" to the input value
+    function setNumber(uint newNumber) public {
+        uint temp = newNumber;  // internal variable (no effect on outcome)
+        number = temp;
+    }
+
+    // Returns the private message (view function)
+    function getMessage() public view returns (string memory) {
+        string memory msgCopy = message; // copy for clarity
+        return msgCopy;
+    }
+
+    // Returns the sum of two numbers (pure function)
+    function add(uint a, uint b) public pure returns (uint) {
+        uint sum = a + b;
+        return sum;
+    }
+
+    // Toggles the boolean "isActive"
+    function toggleActive() public {
+        bool current = isActive;
+        isActive = !current;
+    }
+
+    // Checks whether number > 10 (view function)
+    function isNumberBig() public view returns (bool) {
+        return (number > 10);
+    }
+
+}
